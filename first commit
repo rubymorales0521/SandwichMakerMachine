@@ -1,0 +1,49 @@
+chicken = False
+steak = False
+cheese = False
+
+
+def customerorder():
+    global chicken, steak, cheese
+    chickeninp = input("Welcome in! would you like chicken? \n")
+    steakinp = input("Welcome in! would you like steak? \n")
+    cheeseinp = input("Welcome in! would you like cheese? \n")
+    if chickeninp == "yes":
+        chicken = True
+    if steakinp == "yes":
+        steak = True
+    if cheeseinp == "yes":
+        cheese = True
+
+
+def sandwhichmaker():
+    global chicken, steak, cheese
+    if chicken and steak:
+        if cheese:
+            print("You ordered chicken, steak, and cheese.")
+        else:
+            print("You just got chicken and steak")
+    elif chicken:
+        if cheese:
+            print("You ordered chicken and cheese")
+        else:
+            print("You ordered chicken")
+    elif steak:
+        if cheese:
+            print("You ordered steak and cheese")
+        else:
+            print("you just got steak")
+    elif cheese:
+        print("You just got cheese.")
+
+    else:
+        print("soooo do you just want a knuckle sandwich")
+
+
+for i in range(5):
+    customerorder()
+    sandwhichmaker()
+
+    chicken = False
+    steak = False
+    cheese = False
